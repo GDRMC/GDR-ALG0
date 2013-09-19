@@ -1,0 +1,24 @@
+#include <iostream>
+#include <stdio.h>
+#include <cstdlib>
+
+using namespace std;
+
+int c = 10000; int n = 0; int w = 0;
+
+int main()
+{
+    cout << "Press a key to continue..." << endl << "=-=-=-=-=-=-=-=-=-=-=" << endl;
+    cin.get();
+    cout << " - Year " << n << " - Bank account " << c << " - Money Withdrawn " << w << " -" << endl;
+    while(c > 0)
+    {
+        n = n+1;
+        c = 1.04*c-500;
+        w = w+500;
+        cout << " - Year " << n << " - Bank account " << c << " - Money Withdrawn " << w << " -" << endl;
+    }
+    cout << endl << endl << "End" << endl << "=-=-=-=-=-=-=-=-=-=-=" << endl;
+    system("PAUSE");
+    return 0;
+}
