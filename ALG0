@@ -1,24 +1,27 @@
 #include <iostream>
-#include <stdio.h>
+//Inclusions du compilateur
+#include <stdio.h> 
 #include <cstdlib>
 
-using namespace std;
+using namespace std; //inclusion de l'interface de développement (n'influe pas sur le comportement de l'algorithme
 
-int c = 10000; int n = 0; int w = 0;
+int c = 10000; //Variable int (entiers uniquement) du compte en banque
+int n = 0; //Variable int de l'année (n)
+int w = 0; //Variable int pour l'argent total retiré
 
 int main()
 {
-    cout << "Press a key to continue..." << endl << "=-=-=-=-=-=-=-=-=-=-=" << endl;
-    cin.get();
-    cout << " - Year " << n << " - Bank account " << c << " - Money Withdrawn " << w << " -" << endl;
-    while(c > 0)
-    {
-        n = n+1;
-        c = 1.04*c-500;
-        w = w+500;
-        cout << " - Year " << n << " - Bank account " << c << " - Money Withdrawn " << w << " -" << endl;
-    }
-    cout << endl << endl << "End" << endl << "=-=-=-=-=-=-=-=-=-=-=" << endl;
-    system("PAUSE");
-    return 0;
+    cout << "Pressez une touche pour continuer..." << endl << "=-=-=-=-=-=-=-=-=-=-=" << endl; //Texte s'affichant avant l'entrée d'une touche
+    cin.get(); //Attend la pression d'une touche quelconque du clavier pour continuer
+    cout << " - Année " << n << " - Compte en banque " << c << " - Argent retiré " << w << " -" << endl; //affiche c et w pour n=0
+    while(c > 0) //Tant que c est plus grand que 0
+    { //Boucle
+        n=n++; //n s'incrémente de 1 (équivaut a "n=n+1")
+        c=1.04*c-500; //c prend la valeur 1.04xC-500
+        w=w+500; //w prend la valeur w+500 (on ajoute 500 tout les ans en argent retiré
+        cout << " - Année " << n << " - Compte en banque " << c << " - Argent retiré " << w << " -" << endl; //on affiche le compte en banque c et l'argent retiré w pour chaque année n
+    } //Fin de boucle
+    cout << endl << endl << "Fin" << endl << "=-=-=-=-=-=-=-=-=-=-=" << endl; //Indique la fin de l'algorithme
+    system("PAUSE"); //ligne obligatoire pour éviter la fermeture automatique de la fenètre après la fin de l'execution (la pression d'une touche ferme la fenètre)
+    return 0; //la fonction int main() est par défaut de type int, et doit se terminer par le renvoi d'une valeur de type int, on met 0, cela n'influe en rien dans le résultat de l'algorithme
 }
